@@ -1,4 +1,4 @@
-package com.management_system.importation.entities;
+package com.management_system.importation.entities.database;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,12 +9,15 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serializable;
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("suppliers")
-public class Supplier {
+@Document("category")
+public class Category implements Serializable {
     @Id
     String id;
 
@@ -22,6 +25,9 @@ public class Supplier {
     @Indexed(unique = true)
     String name;
 
-    @Field(name = "location")
-    String location;
+    @Field(name = "ingredient_id_list")
+    List<String> ingredientIdList;
+
+    @Field(name = "product_id_list")
+    List<String> productIdList;
 }

@@ -1,7 +1,7 @@
-package com.management_system.importation.services;
+package com.management_system.importation.usecases.services;
 
-import com.management_system.importation.entities.Ingredient;
-import com.management_system.importation.repositories.IngredientRepository;
+import com.management_system.importation.entities.database.Ingredient;
+import com.management_system.importation.infrastructure.repository.IngredientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
